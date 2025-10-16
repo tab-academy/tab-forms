@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+}
+
+input ,select{
+    height: 30px;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.w-full { width: 100% !important; }
+.flex-1 { flex: 1; }
+.w-fit { width: fit-content !important; }
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Header Styles */
+.header {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.header-top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+.pattern-bg {
+    position: absolute;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./pattern.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.logo-right {
+    position: relative;
+    z-index: 1;
+}
+
+.logo-right img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.academy-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: -15px;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Title Header */
+.title-header {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    align-items: center;
+}
+.title-heade-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.receipt-letter {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.discount-select {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    appearance: none;
+}
+
+/* Form Styles */
+.form-section {
+    margin: 20px 0;
+}
+
+.form-group {
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 2px 0;
+    border-radius: 4px;
+}
+
+.group-flex {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 800;
+    text-wrap: nowrap;
+    min-width: fit-content;
+}
+
+/* Input Styles */
+input[type="text"], 
+input[type="time"] {
+    width: 100%;
+    /* padding: 8px 12px; */
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+input[type="time"] {
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+select {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+    padding: 0 12px;
+    width: 100%;
+}
+
+select:focus {
+    outline: none;
+}
+select.employee-select {
+    text-align: right;
+}
+
+/* Background Colors */
+.place-dark {
+    background-color: #e9ecef;
+}
+
+.place-light {
+    background-color: #f4f5f7;
+}
+
+/* Notes and Alerts Section */
+.notes-section {
+    margin: 5px 0;
+}
+
+.alerts-section {
+    padding: 2px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 5px;
+}
+
+.alert-item {
+    font-size: 10px;
+    line-height: 1.4;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.alert-item strong {
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.alert-item img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Footer Styles */
+.footer {
+    position: relative;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer.top {
+    border-bottom: 2px dashed #000;
+}
+.footer .logo-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.footer .footer-logo img {
+    height: 50px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+/* Button Styles */
+.buttons {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    bottom: 30px;
+    right: 30px;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 22px;
+    width: 67px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+.buttons .print-button {
+    background-color: #ffe600;
+    color: #333;
+}
+.buttons .print-button:hover {
+    background-color: #cfb000;
+}
+.buttons .clear-button {
+    background-color: #ff5100;
+}
+.buttons .clear-button img {
+    filter: invert();
+    -webkit-filter: invert();
+}
+.buttons .clear-button:hover {
+    background-color: #c53e00;
+}
+
+button:hover {
+    background-color: #555;
+    width: 210px;
+}
+
+.receipt-b {
+    visibility: hidden;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+        padding: 20px !important;
+    }
+    
+    .buttons {
+        display: none;
+    }
+    
+    input[type="text"] {
+        border: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    textarea {
+        border: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .form-group {
+        /* border-bottom: 1px solid #ccc; */
+        margin-bottom: 5px;
+    }
+    
+    .alerts-section {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        color: #495057;
+    }
+    
+    /* Hide the "خالص" checkbox in print */
+    .no-remaining-checkbox {
+        display: none;
+    }
+    .receipt-b {
+        visibility: visible;
+    }
+}

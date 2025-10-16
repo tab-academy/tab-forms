@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form - TAB Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="registration-style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-top">
+                <div class="pattern-bg"></div>
+                <div class="logo-right">
+                    <img src="logo.svg" alt="TAB Academy Logo">
+                </div>
+                <div class="logo-right" dir="ltr">
+                    <div class="academy-name">TAB Academy</div>
+                    <div class="tagline">we create your way..</div>
+                </div>
+            </div>
+            <div class="title-heade-form">
+                <div class="form-title">Student Registration Form</div>
+                <div class="course-title" id="course-title"></div>
+                <div class="course-level">
+                    <select onchange="updateCourseInfo()" name="level" id="level" class="level-select">
+                        <option value="empty" data-category="empty" data-description="Select Level">Select Level</option>
+                        <option data-category="kids" data-description="Children's Programming Basics Course - Learn block-based coding" value="level1">level One (Scratch)</option>
+                        <option data-category="kid" data-description="Mobile App Development for Kids" value="level2">level Two (App Inventor)</option>
+                        <option data-category="kid" data-description="Introduction to Text-Based Programming" value="level3">level Three (Python - Basic)</option>
+                        <option data-category="kid" data-description="Advanced Programming Concepts and Projects" value="level4">level Four (Python - Advanced)</option>
+                        <option data-category="kid" data-description="Web Design and Development Fundamentals for Kids" value="level5">level Five Front End</option>
+                        <option data-category="adult" data-description="Programming Fundamentals with Python" value="level6">Python - Fundamentals</option>
+                        <option data-category="adult" data-description="Professional Web Development" value="level7">Web Development (Front-End) </option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Form Section -->
+        <main class="form-section">
+            <!-- Student Information Section -->
+            <div class="section-title student-section-title">بيانات الطالب</div>
+            
+            <div class="form-row row-2-1">
+                <div class="form-group place-light">
+                    <label for="student-name">الاسم بالكامل:</label>
+                    <input type="text" id="student-name" name="student-name" placeholder="أدخل الاسم الكامل">
+                </div>
+                <div class="form-group place-light">
+                    <label for="birth-date">تاريخ الميلاد:</label>
+                    <input type="date" id="birth-date" name="birth-date">
+                </div>
+            </div>
+
+            <div class="form-row row-2-1">
+                <div class="form-group place-dark">
+                    <label for="school-name">اسم المدرسة:</label>
+                    <input type="text" id="school-name" name="school-name" placeholder="أدخل اسم المدرسة">
+                </div>
+                <div class="form-group place-dark">
+                    <label for="grade-level">الصف الدراسي:</label>
+                    <select name="grade-level" id="grade-level" class="grade-level-select w-fit">
+                        <option value="empty" data-category="empty" data-description="Select Grade">Select Grade</option>
+                        <optgroup label="kindergarten" data-description="Kindergarten">
+                            <option data-category="kindergarten" data-description="KG1" value="kg1">KG1 (Pre-K) 3-4 years</option>
+                            <option data-category="kindergarten" data-description="KG2" value="kg2">KG2 4-5 years</option>
+                        </optgroup>
+                        <optgroup label="primary-school" data-description="Primary School">
+                            <option data-category="primary-school" data-description="Grade 1" value="grade1">1st G 6-7 years</option>
+                            <option data-category="primary-school" data-description="Grade 2" value="grade2">2nd G 7-8 years</option>
+                            <option data-category="primary-school" data-description="Grade 3" value="grade3">3rd G 8-9 years</option>
+                            <option data-category="primary-school" data-description="Grade 4" value="grade4">4th G 9-10 years</option>
+                            <option data-category="primary-school" data-description="Grade 5" value="grade5">5th G 10-11 years</option>
+                            <option data-category="primary-school" data-description="Grade 6" value="grade6">6th G 11-12 years</option>
+                        </optgroup>
+                        <optgroup label="Preparatory School" data-description="Preparatory School">
+                            <option data-category="Preparatory School" data-description="Grade 7" value="grade7">7th G 12-13 years</option>
+                            <option data-category="Preparatory School" data-description="Grade 8" value="grade8">8th G 13-14 years</option>
+                            <option data-category="Preparatory School" data-description="Grade 9" value="grade9">9th G 14-15 years</option>
+                        </optgroup>
+                        <optgroup label="Secondary School" data-description="Secondary School">
+                            <option data-category="Secondary School" data-description="Grade 10" value="grade10">10th G 15-16 years</option>
+                            <option data-category="Secondary School" data-description="Grade 11" value="grade11">11th G 16-17 years</option>
+                            <option data-category="Secondary School" data-description="Grade 12" value="grade12">12th G 17-18 years</option>
+                        </optgroup>
+                    </select>
+                    <!-- <input type="text" id="grade-level" name="grade-level" placeholder="أدخل الصف"> -->
+                </div>
+            </div>
+
+            <div class="form-group place-light full-width">
+                <label for="address">العنوان بالكامل:</label>
+                <input type="text" id="address" name="address" placeholder="أدخل العنوان الكامل">
+            </div>
+<!-- 
+            <div class="form-row">
+                <div class="form-group place-light">
+                    <label for="city">المدينة:</label>
+                    <input type="text" id="city" name="city" placeholder="أدخل المدينة">
+                </div>
+                
+            </div> -->
+
+            <!-- Guardian Information Section -->
+            <div class="section-title guardian-section-title">بيانات ولي الأمر</div>
+
+            <div class="form-group place-light full-width">
+                <label for="guardian-name">الاسم بالكامل:</label>
+                <input type="text" id="guardian-name" name="guardian-name" placeholder="أدخل اسم ولي الأمر">
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group place-dark">
+                    <label for="additional-phone">رقم هاتف إضافي:</label>
+                    <input type="tel" id="additional-phone" name="additional-phone" placeholder="أدخل رقم الهاتف">
+                </div>
+                <div class="form-group place-dark">
+                    <label for="guardian-phone">رقم الهاتف:</label>
+                    <input type="tel" id="guardian-phone" name="guardian-phone" placeholder="أدخل رقم الهاتف">
+                </div>
+            </div>
+
+            <div class="form-group place-light">
+                <label for="guardian-email">البريد الإلكتروني <span class="optional">(اختياري)</span>:</label>
+                <input type="email" id="guardian-email" name="guardian-email" placeholder="أدخل البريد الإلكتروني">
+            </div>
+
+            <!-- Previous Level Question -->
+            <div class="question-section">
+                <div class="form-question-row">
+                    <div class="question-text">هل اجتاز الطالب المرحلة الأولى لدى TAB Academy؟</div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="previous-level" value="yes" onchange="togglePreviousLevelDetails()">
+                            <span>نعم</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="previous-level" value="no" onchange="togglePreviousLevelDetails()">
+                            <span>لا</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group place-light" id="previous-level-details" style="display: none;">
+                    <label for="previous-entity">يرجى ذكر اسم الجهة التي حصل منها الطالب على المرحلة الأولى <span class="optional">(اختياري)</span>:</label>
+                    <input type="text" id="previous-entity" name="previous-entity" placeholder="أدخل اسم الجهة">
+                </div>
+            </div>
+
+            <!-- Special Needs Question -->
+            <div class="question-section">
+                <div class="form-question-row">
+                    <div class="question-text">هل لدى الطالب أي احتياجات خاصة أو حساسية؟</div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="special-needs" value="yes" onchange="toggleSpecialNeedsDetails()">
+                            <span>نعم</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="special-needs" value="no" onchange="toggleSpecialNeedsDetails()">
+                            <span>لا</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group place-light" id="special-needs-details" style="display: none;">
+                    <label for="special-needs-description">يرجى التوضيح إذا كانت الإجابة بنعم:</label>
+                    <input type="text" id="special-needs-description" name="special-needs-description" placeholder="أدخل التفاصيل">
+                </div>
+            </div>
+
+            <div class="print-flex">
+
+                <!-- English Level Question -->
+                <div class="question-section form-question-row">
+                    <div class="question-text">ما هو مستوى الطالب في اللغة الإنجليزية؟</div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="english-level" value="A">
+                            <span>A</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="english-level" value="B">
+                            <span>B</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="english-level" value="C">
+                            <span>C</span>
+                        </label>
+                    </div>
+                </div>
+    
+                <!-- Computer at Home Question -->
+                <div class="question-section form-question-row">
+                    <div class="question-text">هل يوجد جهاز كمبيوتر في المنزل؟</div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="radio" name="computer-at-home" value="yes">
+                            <span>نعم</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="computer-at-home" value="no">
+                            <span>لا</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adult Form Fields (Hidden by default) -->
+            <div id="adult-form-fields" style="display: none;">
+                <!-- Trainee Information Section -->
+                <div class="section-title trainee-section-title">بيانات المتدرب</div>
+                
+                <div class="form-row row-2-1">
+                    <div class="form-group place-light">
+                        <label for="trainee-name">الاسم بالكامل:</label>
+                        <input type="text" id="trainee-name" name="trainee-name" placeholder="أدخل الاسم الكامل">
+                    </div>
+                    <div class="form-group place-light">
+                        <label for="trainee-birth-date">تاريخ الميلاد:</label>
+                        <input type="date" id="trainee-birth-date" name="trainee-birth-date">
+                    </div>
+                </div>
+
+                <div class="form-group place-dark">
+                    <label for="school-college">المدرسة/الكلية <span class="optional">(إن وجدت)</span>:</label>
+                    <input type="text" id="school-college" name="school-college" placeholder="أدخل اسم المدرسة أو الكلية">
+                </div>
+                <div class="form-row">
+                    <div class="form-group place-light">
+                        <label for="academic-degree">الدرجة الأكاديمية <span class="optional">(إن وجدت)</span>:</label>
+                        <input type="text" id="academic-degree" name="academic-degree" placeholder="أدخل الدرجة الأكاديمية">
+                    </div>
+                </div>
+
+                <div class="form-group place-dark full-width">
+                    <label for="job-title">المسمى الوظيفي <span class="optional">(إن وجد)</span>:</label>
+                    <input type="text" id="job-title" name="job-title" placeholder="أدخل المسمى الوظيفي">
+                </div>
+
+                <div class="form-group place-light full-width">
+                    <label for="trainee-address">العنوان:</label>
+                    <input type="text" id="trainee-address" name="trainee-address" placeholder="أدخل العنوان الكامل">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group place-dark">
+                        <label for="trainee-phone">رقم الهاتف:</label>
+                        <input type="tel" id="trainee-phone" name="trainee-phone" placeholder="أدخل رقم الهاتف">
+                    </div>
+                    <div class="form-group place-dark">
+                        <label for="trainee-additional-phone">رقم هاتف إضافي:</label>
+                        <input type="tel" id="trainee-additional-phone" name="trainee-additional-phone" placeholder="أدخل رقم الهاتف الإضافي">
+                    </div>
+                </div>
+
+                <div class="form-group place-light">
+                    <label for="trainee-email">البريد الإلكتروني <span class="optional">(اختياري)</span>:</label>
+                    <input type="email" id="trainee-email" name="trainee-email" placeholder="أدخل البريد الإلكتروني">
+                </div>
+
+                <!-- Adult Questions -->
+                <div class="question-section">
+                    <div class="form-question-row">
+                        <div class="question-text">هل لدى المتدرب أي خبرة سابقة في البرمجة؟</div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="radio" name="programming-experience" value="yes" onchange="toggleProgrammingExperienceDetails()">
+                                <span>نعم</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="radio" name="programming-experience" value="no" onchange="toggleProgrammingExperienceDetails()">
+                                <span>لا</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group place-light" id="programming-experience-details" style="display: none;">
+                        <label for="programming-experience-description">يرجى التوضيح إذا كانت الإجابة بنعم:</label>
+                        <input type="text" id="programming-experience-description" name="programming-experience-description" placeholder="أدخل التفاصيل">
+                    </div>
+                </div>
+
+                <div class="question-section">
+                    <div class="form-question-row">
+                        <div class="question-text">هل لدى المتدرب أي احتياجات خاصة أو حساسية؟</div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="radio" name="adult-special-needs" value="yes" onchange="toggleAdultSpecialNeedsDetails()">
+                                <span>نعم</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="radio" name="adult-special-needs" value="no" onchange="toggleAdultSpecialNeedsDetails()">
+                                <span>لا</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group place-light" id="adult-special-needs-details" style="display: none;">
+                        <label for="adult-special-needs-description">يرجى التوضيح إذا كانت الإجابة بنعم:</label>
+                        <input type="text" id="adult-special-needs-description" name="adult-special-needs-description" placeholder="أدخل التفاصيل">
+                    </div>
+                 </div>
+             </div>
+
+             <!-- Additional Notes -->
+             <div class="form-group place-light full-width" id="additional-notes">
+                 <label for="additional-notes">ملاحظات إضافية</label>
+                 <textarea id="additional-notes" name="additional-notes" rows="2" placeholder="أدخل أي ملاحظات إضافية"></textarea>
+             </div>
+
+             <!-- Signature and Date Section -->
+             <div class="signature-section">
+                 <div class="form-row">
+                     <div class="form-group place-dark">
+                         <label for="guardian-signature" id="signature-label">موافقة ولي الأمر:</label>
+                         <input type="text" id="guardian-signature" name="guardian-signature" >
+                     </div>
+                     <div class="form-group place-dark">
+                         <label for="registration-date">تاريخ التسجيل:</label>
+                         <input type="date" id="registration-date" name="registration-date">
+                     </div>
+                 </div>
+                 <div class="form-group place-dark">
+                     <label for="attendance-dates">مواعيد الحضور:</label>
+                     <input type="text" id="attendance-dates" name="attendance-dates" placeholder="أدخل مواعيد الحضور">
+                 </div>
+             </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="pattern-bg"></div>
+            <div class="logo-right">
+                <div class="phone-number">01040626456</div>
+            </div>
+            <div class="logo-right">
+                <div class="footer-logo">TAB Academy</div>
+                <div class="social-icons">
+                    <img src="facebook.svg" alt="Facebook">
+                    <img src="instagram.svg" alt="Instagram">
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- Action Buttons -->
+    <div class="buttons">
+        <button class="print-button" onclick="validateAndPrint()">
+            <img src="printer.svg" alt="Print">
+            طباعة النموذج
+        </button>
+        <button class="print-blank-button" onclick="printBlankForm()">
+            <img src="printer.svg" alt="Print Blank">
+            طباعة نموذج فارغ
+        </button>
+        <button class="clear-button" onclick="clearForm()">
+            <img src="brush.svg" alt="Clear">
+            مسح النموذج
+        </button>
+        <button class="go-to-receipt" onclick="window.location.href='receipt.html'">
+            <img src="arrow-left.svg" alt="Go to Receipt">
+            الذهاب الى الايصال
+        </button>
+    </div>
+
+    <script>
+        let formStarted = false;
+        let isBlankPrint = false;
+
+        function checkLevel() {
+            const levelSelect = document.getElementById('level');
+            if (levelSelect && levelSelect.value === 'empty') {
+                levelSelect.style.border = '2px solid red';
+                levelSelect.style.backgroundColor = '#ffe6e6';
+                console.log('يرجى اختيار المرحلة');
+            } else if (levelSelect && levelSelect.value !== 'empty') {
+                levelSelect.style.border = '0px solid transparent';
+                levelSelect.style.backgroundColor = 'transparent';
+            }
+            return true;
+        }
+        
+        // Only start the interval after the page is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            setInterval(checkLevel, 1000);
+            updateCourseInfo();
+        });
+
+        // Toggle previous level details
+        function togglePreviousLevelDetails() {
+            const noRadio = document.querySelector('input[name="previous-level"][value="no"]');
+            const detailsDiv = document.getElementById('previous-level-details');
+            
+            if (noRadio.checked) {
+                detailsDiv.style.display = 'block';
+            } else {
+                detailsDiv.style.display = 'none';
+                document.getElementById('previous-entity').value = '';
+            }
+        }
+
+        // Toggle special needs details
+        function toggleSpecialNeedsDetails() {
+            const yesRadio = document.querySelector('input[name="special-needs"][value="yes"]');
+            const detailsDiv = document.getElementById('special-needs-details');
+            
+            if (yesRadio.checked) {
+                detailsDiv.style.display = 'block';
+            } else {
+                detailsDiv.style.display = 'none';
+                document.getElementById('special-needs-description').value = '';
+            }
+        }
+
+        // Toggle programming experience details (for adults)
+        function toggleProgrammingExperienceDetails() {
+            const yesRadio = document.querySelector('input[name="programming-experience"][value="yes"]');
+            const detailsDiv = document.getElementById('programming-experience-details');
+            
+            if (yesRadio.checked) {
+                detailsDiv.style.display = 'block';
+            } else {
+                detailsDiv.style.display = 'none';
+                document.getElementById('programming-experience-description').value = '';
+            }
+        }
+
+        // Toggle adult special needs details
+        function toggleAdultSpecialNeedsDetails() {
+            const yesRadio = document.querySelector('input[name="adult-special-needs"][value="yes"]');
+            const detailsDiv = document.getElementById('adult-special-needs-details');
+            
+            if (yesRadio.checked) {
+                detailsDiv.style.display = 'block';
+            } else {
+                detailsDiv.style.display = 'none';
+                document.getElementById('adult-special-needs-description').value = '';
+            }
+        }
+
+        function updateCourseInfo() {
+            const levelSelect = document.getElementById('level');
+            const selectedOption = levelSelect.options[levelSelect.selectedIndex];
+            const levelDescription = selectedOption.dataset.description;
+            const category = selectedOption.dataset.category;
+            const courseTitle = document.getElementById('course-title');
+            
+            courseTitle.innerHTML = levelDescription || 'Select Level';
+            
+             // Get section titles
+             const studentSectionTitle = document.querySelector('.student-section-title');
+             const guardianSectionTitle = document.querySelector('.guardian-section-title');
+             const traineeSectionTitle = document.querySelector('.trainee-section-title');
+             const signatureLabel = document.getElementById('signature-label');
+             const printFlexElement = document.querySelector('.print-flex');
+             
+             // Show/hide form sections based on category
+             const kidsForm = document.querySelector('.form-section > .section-title:first-of-type').parentElement;
+             const adultForm = document.getElementById('adult-form-fields');
+             const additionalNotes = document.getElementById('additional-notes');
+             
+             if (category === 'adult') {
+                 // Hide kids form sections and titles
+                 document.querySelectorAll('.form-section > div:not(.section-title):not(#adult-form-fields):not(#additional-notes):not(.signature-section):not(.print-flex)').forEach(el => {
+                     if (!el.closest('#adult-form-fields')) {
+                         el.style.display = 'none';
+                     }
+                 });
+                 
+                 // Hide student and guardian section titles
+                 if (studentSectionTitle) studentSectionTitle.style.display = 'none';
+                 if (guardianSectionTitle) guardianSectionTitle.style.display = 'none';
+                 
+                 // Show adult form and trainee section title
+                 adultForm.style.display = 'block';
+                 if (traineeSectionTitle) traineeSectionTitle.style.display = 'block';
+                 
+                 // Change signature label for adult
+                 if (signatureLabel) signatureLabel.textContent = 'الموافقة:';
+                 
+                 // Hide print-flex element for adult
+                 if (printFlexElement) printFlexElement.style.display = 'none';
+                 
+                 // Additional notes always visible
+                 if (additionalNotes) additionalNotes.style.display = 'block';
+                 
+             } else if (category === 'kids' || category === 'kid') {
+                 // Show kids form sections and titles
+                 document.querySelectorAll('.form-section > div:not(.section-title):not(#adult-form-fields):not(#additional-notes):not(.signature-section):not(.print-flex)').forEach(el => {
+                     if (!el.closest('#adult-form-fields')) {
+                         // Set appropriate display values
+                         if (el.classList.contains('form-question-row')) {
+                             el.style.display = 'flex';
+                         } else if (el.classList.contains('question-section')) {
+                             el.style.display = 'block';
+                         } else {
+                             el.style.display = 'flex';
+                         }
+                     }
+                 });
+                 
+                 // Show student and guardian section titles
+                 if (studentSectionTitle) studentSectionTitle.style.display = 'block';
+                 if (guardianSectionTitle) guardianSectionTitle.style.display = 'block';
+                 
+                 // Hide adult form and trainee section title
+                 adultForm.style.display = 'none';
+                 if (traineeSectionTitle) traineeSectionTitle.style.display = 'none';
+                 
+                 // Change signature label for kids
+                 if (signatureLabel) signatureLabel.textContent = 'موافقة ولي الأمر:';
+                 
+                 // Show print-flex element for kids
+                 if (printFlexElement) printFlexElement.style.display = 'block';
+                 
+                 // Additional notes always visible
+                 if (additionalNotes) additionalNotes.style.display = 'block';
+                 
+             } else {
+                 // Default state - show kids form, hide adult form
+                 if (studentSectionTitle) studentSectionTitle.style.display = 'block';
+                 if (guardianSectionTitle) guardianSectionTitle.style.display = 'block';
+                 if (traineeSectionTitle) traineeSectionTitle.style.display = 'none';
+                 adultForm.style.display = 'none';
+                 
+                 // Default signature label
+                 if (signatureLabel) signatureLabel.textContent = 'موافقة ولي الأمر:';
+                 
+                 // Show print-flex element for default state
+                 if (printFlexElement) printFlexElement.style.display = 'block';
+                 
+                 // Additional notes always visible
+                 if (additionalNotes) additionalNotes.style.display = 'block';
+             }
+        }
+
+        // Detect if form has been started
+        function detectFormStart() {
+            const allInputs = document.querySelectorAll('input, textarea, select');
+            let hasValue = false;
+            
+            allInputs.forEach(input => {
+                if (input.type === 'radio' || input.type === 'checkbox') {
+                    if (input.checked) hasValue = true;
+                } else if (input.value && input.value.trim() !== '') {
+                    hasValue = true;
+                }
+            });
+            
+            formStarted = hasValue;
+            return hasValue;
+        }
+
+        // Print blank form
+        function printBlankForm() {
+            const levelSelect = document.getElementById('level');
+            if (levelSelect.value === 'empty') {
+                alert('يرجى اختيار المرحلة أولاً قبل طباعة النموذج الفارغ');
+                return;
+            }
+            
+            isBlankPrint = true;
+            
+            // Show conditional fields for blank printing
+            document.getElementById('previous-level-details').style.display = 'block';
+            document.getElementById('special-needs-details').style.display = 'block';
+            document.getElementById('programming-experience-details').style.display = 'block';
+            document.getElementById('adult-special-needs-details').style.display = 'block';
+            
+            // Add blank print class to body
+            document.body.classList.add('blank-print');
+            
+            window.print();
+            
+            // Clean up after printing
+            setTimeout(() => {
+                document.body.classList.remove('blank-print');
+                isBlankPrint = false;
+                
+                // Hide conditional fields again
+                document.getElementById('previous-level-details').style.display = 'none';
+                document.getElementById('special-needs-details').style.display = 'none';
+                document.getElementById('programming-experience-details').style.display = 'none';
+                document.getElementById('adult-special-needs-details').style.display = 'none';
+            }, 1000);
+        }
+
+        // Validate form before printing
+        function validateAndPrint() {
+            const levelSelect = document.getElementById('level');
+            if (levelSelect.value === 'empty') {
+                alert('يرجى اختيار المرحلة أولاً');
+                return;
+            }
+
+            const category = levelSelect.options[levelSelect.selectedIndex].dataset.category;
+            const hasStarted = detectFormStart();
+            
+            if (!hasStarted) {
+                alert('يرجى ملء بعض البيانات أولاً أو استخدم "طباعة نموذج فارغ"');
+                return;
+            }
+
+            // Define required fields based on category
+            let requiredFields = [];
+            let radioGroups = [];
+
+            if (category === 'adult') {
+                requiredFields = [
+                    { id: 'trainee-name', name: 'اسم المتدرب' },
+                    { id: 'trainee-birth-date', name: 'تاريخ الميلاد' },
+                    { id: 'trainee-address', name: 'العنوان' },
+                    { id: 'trainee-phone', name: 'رقم الهاتف' },
+                    { id: 'registration-date', name: 'تاريخ التسجيل' }
+                ];
+                radioGroups = [
+                    { name: 'programming-experience', fieldName: 'الخبرة في البرمجة' },
+                    { name: 'adult-special-needs', fieldName: 'الاحتياجات الخاصة' }
+                ];
+            } else {
+                requiredFields = [
+                    { id: 'student-name', name: 'اسم الطالب' },
+                    { id: 'birth-date', name: 'تاريخ الميلاد' },
+                    { id: 'school-name', name: 'اسم المدرسة' },
+                    { id: 'grade-level', name: 'الصف الدراسي' },
+                    { id: 'address', name: 'العنوان' },
+                    { id: 'guardian-name', name: 'اسم ولي الأمر' },
+                    { id: 'guardian-phone', name: 'رقم هاتف ولي الأمر' },
+                    { id: 'registration-date', name: 'تاريخ التسجيل' }
+                ];
+                radioGroups = [
+                    { name: 'previous-level', fieldName: 'المرحلة السابقة' },
+                    { name: 'special-needs', fieldName: 'الاحتياجات الخاصة' },
+                    { name: 'english-level', fieldName: 'مستوى اللغة الإنجليزية' },
+                    { name: 'computer-at-home', fieldName: 'وجود جهاز كمبيوتر' }
+                ];
+            }
+
+            const emptyFields = [];
+            
+            // Check all required fields
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field.id);
+                if (!element || !element.value || element.value.trim() === '') {
+                    emptyFields.push(field.name);
+                }
+            });
+
+            // Check radio button groups
+            radioGroups.forEach(group => {
+                const checked = document.querySelector(`input[name="${group.name}"]:checked`);
+                if (!checked) {
+                    emptyFields.push(group.fieldName);
+                }
+            });
+
+            if (emptyFields.length > 0) {
+                alert(`يرجى ملء الحقول التالية قبل الطباعة:\n${emptyFields.join('\n')}`);
+                return false;
+            }
+
+            // If all fields are filled, proceed with printing
+            isBlankPrint = false;
+            window.print();
+        }
+
+        // Clear form function
+        function clearForm() {
+            if (confirm('هل تريد مسح جميع البيانات المدخلة؟')) {
+                document.querySelectorAll('input, textarea, select').forEach(element => {
+                    if (element.type === 'radio' || element.type === 'checkbox') {
+                        element.checked = false;
+                    } else {
+                        element.value = '';
+                    }
+                });
+                
+                // Hide conditional fields
+                document.getElementById('previous-level-details').style.display = 'none';
+                document.getElementById('special-needs-details').style.display = 'none';
+                document.getElementById('programming-experience-details').style.display = 'none';
+                document.getElementById('adult-special-needs-details').style.display = 'none';
+                
+                formStarted = false;
+            }
+            updateRegistrationDate();
+        }
+
+        // Update registration date
+        function updateRegistrationDate() {
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+            const day = String(currentDate.getDate()).padStart(2, '0');
+            const date = `${year}-${month}-${day}`;
+            document.getElementById('registration-date').value = date;
+        }
+
+        // Add event listeners to detect form start
+        document.addEventListener('DOMContentLoaded', function() {
+            const allInputs = document.querySelectorAll('input, textarea, select');
+            allInputs.forEach(input => {
+                input.addEventListener('input', detectFormStart);
+                input.addEventListener('change', detectFormStart);
+            });
+        });
+
+        // Initialize on page load
+        updateRegistrationDate();
+    </script>
+</body>
+</html>

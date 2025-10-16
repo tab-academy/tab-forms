@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt - TAB Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-top">
+                <div class="pattern-bg"></div>
+                <div class="logo-right">
+                    <img src="logo.svg" alt="TAB Academy Logo">
+                </div>
+                <div class="logo-right" dir="ltr">
+                    <div class="academy-name">TAB Academy</div>
+                    <div class="tagline">we create your way..</div>
+                </div>
+            </div>
+            <div class="title-header">
+                <div class="receipt-letter">A</div>
+                <div class="form-title">إيصال استلام نقديه</div>
+                <select name="discount" id="discount" class="discount-select">
+                    <option value="">خصم 0%</option>
+                    <option value="10">خصم 10%</option>
+                    <option value="20">خصم 15%</option>
+                    <option value="25">خصم 25%</option>
+                    <option value="30">خصم 30%</option>
+                    <option value="50">خصم 50%</option>
+                    <option value="75">خصم 75%</option>
+		    <option value="100">خصم 100%</option>
+                </select>
+            </div>
+        </header>
+        
+        <!-- Form Section -->
+        <main class="form-section">
+            <!-- Date and Time -->
+            <div class="group-flex">
+                <div class="form-group place-light">
+                    <label for="current-date">التاريخ:</label>
+                    <input disabled type="text" id="current-date" name="current-date" placeholder="DD/MM/YYYY">
+                </div>
+                <div class="form-group place-light">
+                    <input disabled type="time" id="current-time" name="current-time">
+                </div>
+            </div>
+            
+            <!-- Student Name -->
+            <div class="form-group place-dark">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" placeholder="أدخل الاسم">
+            </div>
+
+            <!-- Amount and Payment Method -->
+            <div class="group-flex">
+                <div class="form-group place-light flex-1">
+                    <label for="amount">المبلغ المدفوع:</label>
+                    <input onchange="onAmountChange(event)" type="text" id="amount" name="amount" class="text-center" placeholder="أدخل المبلغ">
+                </div>
+                <div class="form-group place-light w-fit">
+                    <select name="payment-method" id="payment-method">
+                        <option value="">طريقة الدفع</option>
+                        <option value="bank">تحويل بنكي</option>
+                        <option value="cash">دفع نقدي</option>
+                        <option value="wallet">محفظة كاش</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Course Level -->
+            <div class="form-group place-dark">
+                <label for="paid-for">وذلك قيمة:</label>
+                <select name="paid-for" id="paid-for" class="w-full">
+                    <option value="">اختر المستوى</option>
+                    <option value="level1">المستوى الأول (Scratch)</option>
+                    <option value="level2">المستوى الثاني (App Inventor)</option>
+                    <option value="level3">المستوى الثالث (Python - أساسي)</option>
+                    <option value="level4">المستوى الرابع (Python - متقدم)</option>
+                    <option value="level5">المستوى الخامس (Front End)</option>
+                    <option value="level6">تطوير الويب (Front-End)</option>
+                </select>
+            </div>
+            
+            <!-- Remaining Amount and Clear Status -->
+            <div class="group-flex">
+                <div class="form-group place-light flex-1">
+                    <label for="remaining-amount">المستحقات المتبقية:</label>
+                    <input onchange="onAmountChange(event)" type="text" id="remaining-amount" name="remaining-amount" class="text-center" placeholder="أدخل المبلغ">
+                </div>
+                <div class="form-group place-light w-fit no-remaining-checkbox">
+                    <label for="no-remaining">خالص:</label>
+                    <input onchange="onIsClearChange(event)" type="checkbox" id="no-remaining" name="no-remaining">
+                </div>
+            </div>
+
+            <!-- Employee -->
+            <div class="form-group place-dark">
+                <label for="employee">المستلم:</label>
+                <select name="employee" id="employee" class="employee-select">
+                    <option value="">حدد المستلم</option>
+                    <option value="ahmed">Mr: Ahmed</option>
+                    <option value="mohamed">Mr: Mohamed</option>
+                    <option value="haneen">Ms: Haneen</option>
+                    <option value="safa">Ms: Safa</option>
+                </select>
+            </div>
+
+            <!-- Notes and Alerts Section -->
+            <div class="notes-section">
+                <div class="alerts-section">
+                    <div class="alert-item">
+                        <img src="alert.svg" alt="Warning">
+                        <strong>تنبيه :</strong> يرجى مراجعة بيانات الايصال قبل الاستلام - والتأكد من وجود الختم والامضاء - والاحتفاظ بهذا الإيصال <strong>كدليل على الدفع</strong>
+                        <img src="alert.svg" alt="Warning">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer top">
+            <div class="pattern-bg"></div>
+            <div class="logo-right">
+                <div class="phone-number">01040626456</div>
+            </div>
+            <div class="logo-right">
+                <div class="footer-logo">TAB Academy</div>
+                <div class="social-icons">
+                    <img src="facebook.svg" alt="Facebook">
+                    <img src="instagram.svg" alt="Instagram">
+                </div>
+            </div>
+        </footer>
+
+        <!-- Receipt B -->
+         <div class="receipt-b">
+
+             <header class="header">
+                 <div class="header-top">
+                     <div class="pattern-bg"></div>
+                     <div class="logo-right">
+                         <img src="logo.svg" alt="TAB Academy Logo">
+                     </div>
+                     <div class="logo-right" dir="ltr">
+                         <div class="academy-name">TAB Academy</div>
+                         <div class="tagline">we create your way..</div>
+                     </div>
+                 </div>
+                 <div class="title-header">
+                     <div class="receipt-letter">B</div>
+                     <div class="form-title">إيصال استلام نقديه</div>
+                     <select name="discount" id="discount-b" class="discount-select">
+                         <option value="">خصم 0%</option>
+                         <option value="10">خصم 10%</option>
+                         <option value="20">خصم 20%</option>
+                         <option value="25">خصم 25%</option>
+                         <option value="30">خصم 30%</option>
+                         <option value="50">خصم 50%</option>
+                         <option value="75">خصم 75%</option>
+                     </select>
+                 </div>
+             </header>
+             
+             <!-- Form Section -->
+             <main class="form-section">
+                 <!-- Date and Time -->
+                 <div class="group-flex">
+                     <div class="form-group place-light">
+                         <label for="current-date-b">التاريخ:</label>
+                         <input  type="text" id="current-date-b" name="current-date-b" placeholder="DD/MM/YYYY">
+                     </div>
+                     <div class="form-group place-light">
+                         <input  type="time" id="current-time-b" name="current-time-b">
+                     </div>
+                 </div>
+                 
+                 <!-- Student Name -->
+                 <div class="form-group place-dark">
+                     <label for="name-b">الاسم:</label>
+                     <input  type="text" id="name-b" name="name-b" placeholder="أدخل الاسم">
+                 </div>
+     
+                 <!-- Amount and Payment Method -->
+                 <div class="group-flex">
+                     <div class="form-group place-light flex-1">
+                         <label for="amount-b">المبلغ المدفوع:</label>
+                         <input  type="text" id="amount-b" name="amount-b" class="text-center" placeholder="أدخل المبلغ">
+                     </div>
+                     <div class="form-group place-light w-fit">
+                         <select name="payment-method-b" id="payment-method-b">
+                             <option value="">طريقة الدفع</option>
+                             <option value="bank">تحويل بنكي</option>
+                             <option value="cash">دفع نقدي</option>
+                             <option value="wallet">محفظة كاش</option>
+                         </select>
+                     </div>
+                 </div>
+     
+                 <!-- Course Level -->
+                 <div class="form-group place-dark">
+                     <label for="paid-for-b">وذلك قيمة:</label>
+                     <select name="paid-for-b" id="paid-for-b"  class="w-full">
+                         <option value="">اختر المستوى</option>
+                         <option value="level1">المستوى الأول (Scratch)</option>
+                         <option value="level2">المستوى الثاني (App Inventor)</option>
+                         <option value="level3">المستوى الثالث (Python - أساسي)</option>
+                         <option value="level4">المستوى الرابع (Python - متقدم)</option>
+                         <option value="level5">المستوى الخامس (Front End)</option>
+                         <option value="level6">تطوير الويب (Front-End)</option>
+                     </select>
+                 </div>
+                 
+                 <!-- Remaining Amount and Clear Status -->
+                 <div class="form-group place-light flex-1">
+                     <label for="remaining-amount-b">المستحقات المتبقية:</label>
+                     <input  type="text" id="remaining-amount-b" name="remaining-amount-b" class="text-center" placeholder="أدخل المبلغ">
+                 </div>
+                 
+     
+                 <!-- Employee -->
+                 <div class="form-group place-dark">
+                     <label for="employee-b">المستلم:</label>
+                     <select  name="employee-b" id="employee-b" class="employee-select">
+                         <option value="">حدد المستلم</option>
+                         <option value="ahmed">Mr: Ahmed</option>
+                         <option value="mohamed">Mr: Mohamed</option>
+                         <option value="haneen">Ms: Haneen</option>
+                         <option value="safa">Ms: Safa</option>
+                     </select>
+                 </div>
+     
+                 <!-- Notes and Alerts Section -->
+                 <div class="notes-section">
+                     <div class="alerts-section">
+                         <div class="alert-item">
+                             <img src="alert.svg" alt="Warning">
+                             <strong>تنبيه :</strong> يرجى مراجعة بيانات الايصال قبل الاستلام - والتأكد من وجود الختم والامضاء - والاحتفاظ بهذا الإيصال <strong>كدليل على الدفع</strong>
+                             <img src="alert.svg" alt="Warning">
+                         </div>
+                     </div>
+                 </div>
+             </main>
+     
+             <!-- Footer -->
+             <footer class="footer">
+                 <div class="pattern-bg"></div>
+                 <div class="logo-right">
+                     <div class="phone-number">01040626456</div>
+                 </div>
+                 <div class="logo-right">
+                     <div class="footer-logo">TAB Academy</div>
+                     <div class="social-icons">
+                         <img src="facebook.svg" alt="Facebook">
+                         <img src="instagram.svg" alt="Instagram">
+                     </div>
+                 </div>
+             </footer>
+             
+         </div>
+        <!-- Action Buttons -->
+        <div class="buttons">
+            <button class="print-button" onclick="validateAndPrint()">
+                <img src="printer.svg" alt="Print">
+                طباعة الايصال</button>
+            <button class="clear-button" onclick="clearForm()">
+                <img src="brush.svg" alt="Clear">
+                مسح الايصال</button>
+            <button class="go-to-registration" onclick="window.location.href='index.html'">
+                <img src="arrow-left.svg" alt="Go to Registration">
+                الذهاب الى نموذج التسجيل
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Employee data
+        const employees = [
+            'السيد أحمد',
+            'السيد محمد', 
+            'الآنسة هناء',
+            'الآنسة صفا'
+        ];
+
+        // Validate form before printing
+        function validateAndPrint() {
+            const requiredFields = [
+                { id: 'name', name: 'الاسم' },
+                { id: 'amount', name: 'المبلغ المدفوع' },
+                { id: 'payment-method', name: 'طريقة الدفع' },
+                { id: 'paid-for', name: 'المستوى' },
+                { id: 'employee', name: 'المستلم' }
+            ];
+
+            const emptyFields = [];
+            
+            // Check all required fields
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field.id);
+                if (!element.value || element.value.trim() === '') {
+                    emptyFields.push(field.name);
+                }
+            });
+
+            // Check remaining amount only if "no-remaining" is NOT checked
+            const noRemainingChecked = document.getElementById('no-remaining').checked;
+            const remainingAmount = document.getElementById('remaining-amount');
+            
+            if (!noRemainingChecked) {
+                if (!remainingAmount.value || remainingAmount.value.trim() === '') {
+                    emptyFields.push('المستحقات المتبقية');
+                }
+            }
+
+            if (emptyFields.length > 0) {
+                alert(`يرجى ملء الحقول التالية قبل الطباعة:\n${emptyFields.join('\n')}`);
+                return false;
+            }
+
+            // If all fields are filled, proceed with printing
+            window.print();
+        }
+
+        // Clear form function
+        function clearForm() {
+            if (confirm('هل تريد مسح جميع البيانات المدخلة؟')) {
+                document.querySelectorAll('input, textarea, select').forEach(element => {
+                    if (element.type === 'radio' || element.type === 'checkbox') {
+                        element.checked = false;
+                    } else {
+                        element.value = '';
+                    }
+                });
+            }
+            updateCurrentDate();
+        }
+
+        // Update current date
+        function updateCurrentDate() {
+            const currentDate = new Date();
+            const day = String(currentDate.getDate()).padStart(2, '0');
+            const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+            const year = currentDate.getFullYear();
+            const date = `${day}/${month}/${year}`;
+            document.getElementById('current-date').value = date;
+        }
+
+        // Update current time
+        function updateCurrentTime() {
+            const currentDate = new Date();
+            const time = currentDate.toLocaleTimeString('en-GB');
+            document.getElementById('current-time').value = time;
+        }
+
+        // Amount change handler
+        function onAmountChange(e) {
+            const amountInput = e.target;
+            let amount = amountInput.value;
+            
+            // Remove any existing currency text and non-numeric characters except decimal point
+            amount = amount.replace(/[^\d.]/g, '');
+            
+            // Validate that it's a valid number
+            if (amount && !isNaN(parseFloat(amount))) {
+                const numericAmount = parseFloat(amount);
+                const formattedAmount = numericAmount.toFixed(2);
+                const currency = 'جنيه';
+                amountInput.value = formattedAmount + ' ' + currency;
+            } else if (amount === '') {
+                amountInput.value = '';
+            } else {
+                console.log('Invalid amount entered');
+                amountInput.value = '';
+                amountInput.placeholder = 'أدخل مبلغ صحيح';
+            }
+        }
+
+        // Clear status change handler
+        function onIsClearChange(e) {
+            const isClearInput = e.target;
+            const isClear = isClearInput.checked;
+            const remainingAmountInput = document.getElementById('remaining-amount');
+            
+            if (isClear) {
+                remainingAmountInput.disabled = true;
+                remainingAmountInput.value = 'خــــــــــالـــــــص';
+            } else {
+                remainingAmountInput.disabled = false;
+                remainingAmountInput.value = '';
+                remainingAmountInput.placeholder = 'أدخل المبلغ';
+            }
+        }
+
+        // Initialize on page load
+        updateCurrentDate();
+        updateCurrentTime();
+
+        function setReceiptB() {
+            const discount = document.getElementById('discount').value;
+            const discountB = document.getElementById('discount-b');
+            const date = document.getElementById('current-date').value;
+            const dateB = document.getElementById('current-date-b');
+            const time = document.getElementById('current-time').value;
+            const timeB = document.getElementById('current-time-b');
+            const name = document.getElementById('name').value;
+            const nameB = document.getElementById('name-b');
+            const amount = document.getElementById('amount').value;
+            const amountB = document.getElementById('amount-b');
+            const paymentMethod = document.getElementById('payment-method').value;
+            const paymentMethodB = document.getElementById('payment-method-b');
+            const paidFor = document.getElementById('paid-for').value;
+            const paidForB = document.getElementById('paid-for-b');
+            const employee = document.getElementById('employee').value;
+            const employeeB = document.getElementById('employee-b');
+            const remainingAmount = document.getElementById('remaining-amount').value;
+            const remainingAmountB = document.getElementById('remaining-amount-b');
+            discountB.value = discount;
+            dateB.value = date;
+            timeB.value = time;
+            nameB.value = name;
+            amountB.value = amount;
+            paymentMethodB.value = paymentMethod;
+            paidForB.value = paidFor;
+            remainingAmountB.value = remainingAmount;
+            employeeB.value = employee;
+        }
+        setInterval(updateCurrentTime, 1000);
+        setInterval(setReceiptB, 1000);
+    </script>
+</body>
+</html>

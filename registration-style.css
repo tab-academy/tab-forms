@@ -1,0 +1,475 @@
+/* Registration Form Specific Styles */
+
+/* Section Titles */
+.section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    /* margin: 20px 0 10px 0; */
+    padding: 8px 12px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Course Title Styling */
+.course-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin: 0px 0;
+}
+
+.course-level {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Form Layout */
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+.form-question-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    /* margin: 5px 0; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-row.row-2-1 .form-group:first-child {
+    flex: 2;
+}
+.form-row.row-2-1 .form-group:last-child {
+    flex: 1;
+}
+
+.full-width {
+    width: 100%;
+    margin: 5px 0;
+}
+
+/* Question Sections */
+.question-section {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+
+.question-text {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    /* margin-bottom: 10px; */
+    text-align: right;
+}
+
+/* Checkbox Groups */
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    /* margin: 10px 0; */
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.checkbox-label input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-label span {
+    user-select: none;
+}
+
+/* Textarea Styling */
+textarea {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Cairo', sans-serif;
+    resize: vertical;
+    min-height: 60px;
+    /* padding: 8px 0; */
+}
+
+textarea:focus {
+    outline: none;
+}
+
+/* Date Input Styling */
+input[type="date"] {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Cairo', sans-serif;
+}
+
+input[type="date"]:focus {
+    outline: none;
+}
+
+/* Tel and Email Input Styling */
+input[type="tel"], 
+input[type="email"] {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Cairo', sans-serif;
+}
+
+input[type="tel"]:focus,
+input[type="email"]:focus {
+    outline: none;
+}
+
+/* Signature Section */
+.signature-section {
+    /* margin-top: 20px; */
+    /* padding: 15px; */
+    /* background-color: #f8f9fa; */
+    border-radius: 5px;
+    /* border: 2px solid #dee2e6; */
+}
+
+/* Conditional Fields */
+#previous-level-details,
+#special-needs-details {
+    /* margin-top: 10px; */
+    animation: fadeIn 0.3s ease-in;
+    -webkit-animation: fadeIn 0.3s ease-in;
+}
+#previous-level-details label,
+#special-needs-details label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #666;
+    text-align: right;
+}
+.pt-5 {
+    padding-top: 5px;
+}
+.align-start {
+    align-items: flex-start;
+}
+.optional {
+    font-size: 10px;
+    font-weight: bold;
+    color: #666;
+    text-align: right;
+}
+.print-flex {
+    display: block;
+}
+
+*::placeholder{
+    font-size: 14px;
+    font-weight: 500;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Print Styles for Registration Form - A4 Optimization */
+@media print {
+    .print-flex:not([style*="display: none"]) {
+        display: flex !important;
+        flex-direction: row;
+        gap: 6px;
+    }
+    
+    .print-flex[style*="display: none"] {
+        display: none !important;
+    }
+    textarea {
+        min-height: 30px;
+        resize: none;
+    }
+
+    /* Header and form section optimization - only for kids forms */
+    .print-flex:not([style*="display: none"]) ~ * .form-section,
+    .print-flex:not([style*="display: none"]) ~ * .header {
+        margin: 0;
+    }
+    .print-flex:not([style*="display: none"]) ~ * .header-top {
+        margin-bottom: 0;
+    }
+    .form-section, .header{
+        margin: 0;
+    }
+    .header-top {
+        margin-bottom: 0;
+    }
+    /* Question sections optimization */
+    .question-section {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        page-break-inside: avoid;
+        margin: 3px 0;
+    }
+
+    
+
+    
+    /* Additional notes optimization */
+    
+    #additional-notes textarea {
+        max-height: 30px;
+        rows: 2;
+    }
+    
+    /* Special needs description label optimization */
+    #special-needs-details label,
+    #previous-level-details label,
+    #programming-experience-details label,
+    #adult-special-needs-details label {
+        font-size: 9px !important;
+        font-weight: 400 !important;
+        color: #666 !important;
+    }
+    
+    /* Signature section optimization */
+    .signature-section {
+
+        page-break-inside: avoid;
+
+    }
+    
+    /* Footer optimization - only for kids forms */
+    .print-flex:not([style*="display: none"]) ~ * .footer {
+        padding: 8px;
+        margin-top: 10px;
+    }
+    
+    .print-flex:not([style*="display: none"]) ~ * .footer .logo-right {
+        font-size: 14px;
+    }
+    
+    .print-flex:not([style*="display: none"]) ~ * .social-icons img {
+        width: 15px;
+        height: 15px;
+    }
+    
+    /* Hide buttons in print */
+    .buttons {
+        display: none !important;
+    }
+    
+    /* Hide conditional fields if they're empty */
+    #previous-level-details:not([style*="block"]),
+    #special-needs-details:not([style*="block"]),
+    #programming-experience-details:not([style*="block"]),
+    #adult-special-needs-details:not([style*="block"]) {
+        display: none !important;
+    }
+    
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .checkbox-group {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+    }
+    
+    .question-text {
+        font-size: 14px;
+    }
+    
+    .section-title {
+        font-size: 14px;
+    }
+}
+
+/* Focus States */
+input:focus,
+textarea:focus,
+select:focus {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+}
+
+/* Hover Effects */
+.checkbox-label:hover {
+    color: #007bff;
+}
+
+.form-group:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+/* Level Select Styling */
+.level-select {
+    width: 100%;
+    /* padding: 8px 12px; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+}
+
+.level-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Title Header for Registration Form */
+.title-heade-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-bottom: 20px; */
+}
+
+/* Go to Receipt Button */
+.go-to-receipt, .go-to-registration {
+    background-color: #28a745;
+    color: white;
+}
+
+.go-to-receipt:hover, .go-to-registration:hover {
+    background-color: #218838;
+}
+
+.go-to-receipt img, .go-to-registration img {
+    filter: invert();
+    -webkit-filter: invert();
+}
+
+/* Print Blank Button */
+.print-blank-button {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.print-blank-button:hover {
+    background-color: #138496;
+}
+
+.print-blank-button img {
+    filter: invert();
+    -webkit-filter: invert();
+}
+
+/* Grade Level Select Styling */
+.grade-level-select {
+    width: 100%;
+    /* padding: 8px 12px; */
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+}
+
+.grade-level-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Blank Print Styles */
+.blank-print *::placeholder {
+    opacity: 0 !important;
+    color: transparent !important;
+}
+
+.blank-print input[type="text"],
+.blank-print input[type="tel"],
+.blank-print input[type="email"],
+.blank-print textarea {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.blank-print select {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* Hide specific elements in blank print */
+.blank-print #grade-level,
+.blank-print input[type="date"] {
+    display: none !important;
+}
+
+/* Adult Form Specific Styles */
+#adult-form-fields .form-group {
+    /* margin: 5px 0; */
+}
+
+#adult-form-fields .section-title {
+    /* margin-top: 20px; */
+}
+
+/* Conditional Fields for Blank Print */
+.blank-print #previous-level-details,
+.blank-print #special-needs-details,
+.blank-print #programming-experience-details,
+.blank-print #adult-special-needs-details {
+    display: block !important;
+    /* border: 1px dashed #ccc; */
+    /* padding: 10px;
+    margin: 10px 0; */
+    background-color: #f9f9f9;
+}
+
+/* Form Detection Styles */
+.form-started .form-group {
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive adjustments for new buttons */
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .buttons button {
+        width: 100%;
+        justify-content: center;
+    }
+}
