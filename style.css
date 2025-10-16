@@ -126,6 +126,7 @@ input ,select{
 /* Form Styles */
 .form-section {
     margin: 20px 0;
+    padding: 0 50px;
 }
 
 .form-group {
@@ -374,4 +375,5 @@ button:hover {
     .receipt-b {
         visibility: visible;
     }
+
 }
